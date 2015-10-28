@@ -6,8 +6,12 @@ function addListenersFirst(){
 	// Add click listener to the upper div with className 'rechts'
 	// a) put the div elements into a variable
 	// b) use variable to add event listener
-
+	var rechteBox = document.getElementsByClassName("rechtebox");
+	rechteBox[0].addEventListener('mouseover', flipMe);
+	
 	// Add mouseover listener to the upper div with classname 'links'
+	var linkeBox = document.getElementsByClassName("linkebox");
+	linkeBox[0].addEventListener('click', copyMe);	
 
 
 	// Add listeners to action elements for "Make Alerts" "Bezeichner" and "Schreibe den Text"
@@ -23,10 +27,11 @@ function addListenersFirst(){
 function copyMe(){
 	// put the "container"-element (to where the text should copied) into the 
 	// variable container (target element)
-	container = 
+	container = document.getElementsByID('container');
 	// put the element to be read into the variable divlinks (source element)
-	divlinks = 
+	divlinks = rechteBox[0];
 	// put the content of the source element into text node of the target element
+	container.innerHTML = rechteBox[0].innerHTML;
 }
 
 /*
